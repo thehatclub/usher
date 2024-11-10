@@ -30,7 +30,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 # Import models after db initialization to avoid circular import
-from models import User
+import routes
 
 # Create all database tables
 with app.app_context():
