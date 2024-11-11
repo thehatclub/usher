@@ -11,19 +11,14 @@ import Media from "./pages/Media.tsx";
 import Profile from "./pages/Profile.tsx";
 import Revision from "./pages/Revision.tsx";
 import Watchlist from "./pages/Watchlist.tsx";
-import { Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Navbar from "./components/Navbar.tsx";
 import Footer from "./components/Footer.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider>
-      <Flex
-        bgColor={"gray.800"}
-        h={"100vh"}
-        w={"100%"}
-        flexDirection={"column"}
-      >
+      <Box bgColor={"gray.800"}>
         <Navbar />
         <BrowserRouter>
           <Routes>
@@ -37,7 +32,7 @@ createRoot(document.getElementById("root")!).render(
           </Routes>
         </BrowserRouter>
         <Footer />
-      </Flex>
+      </Box>
     </Provider>
   </StrictMode>,
 );
