@@ -18,7 +18,7 @@ import Footer from "./components/Footer.tsx";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider>
-      <Box bgColor={"gray.800"}>
+      <Box bgColor={"gray.800"} bgImage={"url(/wallpaper.svg)"}>
         <Navbar />
         <BrowserRouter>
           <Routes>

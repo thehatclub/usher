@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Link } from "@chakra-ui/react";
 
 const Footer = () => {
   return (
@@ -9,8 +9,8 @@ const Footer = () => {
         p={"15px"}
         bg={"gray.900"}
       >
-        <Text>Usher | The Hat Club 2024</Text>
-      </Flex>
+        <Link variant={"underline"} color={"yellow.400"} target="_blank" href="https://github.com/thehatclub">Usher | The Hat Club 2024</Link>
+      </Flex >
     </>
   );
 };

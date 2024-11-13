@@ -8,23 +8,28 @@ import {
   HStack,
   Image,
   Button,
+  useBreakpointValue,
+  Float
 } from "@chakra-ui/react";
 import { ProgressBar, ProgressRoot } from "@/components/ui/progress";
-import { BookmarkPlus, Film } from "lucide-react";
+import { BookmarkPlus, Film, ScanEye, BookOpenCheck } from "lucide-react";
 
 const Progress = () => {
+
   return (
     <>
       <Box
-        p={"30px"}
-        px={"40px"}
+        py={"70px"}
+        px={"80px"}
         bgColor={"gray.900"}
         borderRadius={"10px"}
         alignContent={"center"}
+        position={"relative"}
       >
+        <Float offset={"50%"} color={"gray.500"} opacity={"10%"}><BookOpenCheck size={"15rem"} /></Float>
         <Flex direction={"column"} textAlign={"center"}>
-          <Heading>50%</Heading>
-          <Text color={"gray.400"}>Titles Watched</Text>
+          <Heading size={"7xl"}>50%</Heading>
+          <Text fontSize={"xl"} color={"gray.400"}>Titles Watched</Text>
         </Flex>
         <ProgressRoot mt={"20px"} size={"xl"}>
           <ProgressBar />
@@ -37,29 +42,33 @@ const Count = () => {
   return (
     <>
       <Box
-        p={"30px"}
-        px={"40px"}
+        py={"70px"}
+        px={"100px"}
         bgColor={"gray.100"}
         color={"gray.900"}
         borderRadius={"10px"}
-        textAlign={"center"}
         alignContent={"center"}
+        textAlign={"center"}
+        position={"relative"}
       >
-        <Heading>28</Heading>
-        <Text color={"gray.500"}>Titles Watched</Text>
+        <Float offset={"50%"} color={"gray.500"} opacity={"10%"}><ScanEye size={"15rem"} /></Float>
+        <Heading size={"7xl"}>28</Heading>
+        <Text fontSize={"xl"} color={"gray.600"}>Unwatched</Text>
       </Box>
     </>
   );
 };
 const Recommended = () => {
+  const screen = useBreakpointValue({ base: 'xs', md: 'lg' });
+
   return (
     <>
       <Card.Root
         flexDirection="row"
         overflow="hidden"
         borderRadius={"10px"}
-        maxHeight={"200px"}
-        maxW={"40%"}
+        maxW={"vh"}
+
       >
         <Image
           objectFit="cover"
@@ -77,11 +86,16 @@ const Recommended = () => {
             </HStack>
           </Card.Body>
           <Card.Footer>
-            <Button bgColor={"yellow.400"}>
+            <Button
+              bgColor="yellow.400"
+              size={screen}
+            >
               <BookmarkPlus />
               Add to List
             </Button>
-            <Button>
+            <Button
+              size={screen}
+            >
               <Film />
               Watch Trailer
             </Button>

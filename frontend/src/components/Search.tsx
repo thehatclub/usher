@@ -1,4 +1,4 @@
-import { Input, Kbd } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react";
 import { InputGroup } from "./ui/input-group";
 import { LuSearch } from "react-icons/lu";
 
@@ -8,10 +8,9 @@ const Search = () => {
       <InputGroup
         flex="1"
         startElement={<LuSearch />}
-        endElement={<Kbd>⌘K</Kbd>}
         maxW={"50%"}
       >
-        <Input placeholder="Search Media" />
+        <Input placeholder="Search" />
       </InputGroup>
     </>
   );

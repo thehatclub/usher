@@ -6,8 +6,8 @@ import {
   MenuSeparator,
   MenuTrigger,
 } from "@/components/ui/menu";
+import { Flex, Heading, Image, Link } from "@chakra-ui/react";
 import Search from "./Search";
-import { Flex, Heading } from "@chakra-ui/react";
 import {
   DoorOpen,
   HardDriveUpload,
@@ -20,16 +20,14 @@ import {
 const Navbar = () => {
   return (
     <>
-      <Flex bgColor={"gray.900"} p={"20px"} gap={4} justify={"space-between"}>
-        <Flex alignItems={"center"} gap={3}>
-          <Avatar
+      <Flex bgColor={"gray.900"} p={"20px"} gap={5} justify={"space-between"}>
+        <Link variant={"plain"}>
+          <Image
             src="/crown-coin.svg"
-            variant={"outline"}
-            borderRadius={"10px"}
-            p={"1px"}
+            width={"2.5rem"}
           />
-          <Heading minW={"max-content"}>Usher:Media Discovery</Heading>
-        </Flex>
+          <Heading minW={"max-content"}>Usher: Media Discovery</Heading>
+        </Link>
 
         <Search />
 
