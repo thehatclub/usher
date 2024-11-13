@@ -22,10 +22,7 @@ const Navbar = () => {
     <>
       <Flex bgColor={"gray.900"} p={"20px"} gap={5} justify={"space-between"}>
         <Link variant={"plain"}>
-          <Image
-            src="/crown-coin.svg"
-            width={"2.5rem"}
-          />
+          <Image src="/crown-coin.svg" width={"2.5rem"} />
           <Heading minW={"max-content"}>Usher: Media Discovery</Heading>
         </Link>
 
@@ -65,9 +62,11 @@ const Navbar = () => {
               </a>
             </MenuItem>
             <MenuSeparator />
-            <MenuItem value="open-file" color={"red.500"}>
-              <DoorOpen size={"15px"} />
-              Open File...
+            <MenuItem asChild value="open-file" color={"red.500"}>
+              <a href="/login">
+                <DoorOpen size={"15px"} />
+                Open File...
+              </a>
             </MenuItem>
             <MenuItem value="export">
               <HardDriveUpload size={"15px"} />

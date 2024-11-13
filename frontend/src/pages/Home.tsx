@@ -1,18 +1,21 @@
 import MiniCard from "@/components/MiniCard";
 import Stats from "@/components/Stats";
-import { Box, Container, Flex, Heading, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import { Sparkles } from "lucide-react";
 
 const Home = () => {
   // Determine layout direction based on screen size
-  const flexDirection = useBreakpointValue({ base: 'column', md: 'row' });
-
+  const flexDirection = useBreakpointValue({ base: "column", md: "row" });
 
   return (
     <>
-      <Container
-        my="50px"
-      >
+      <Container py="50px">
         {/* Stats Section */}
         <Box>
           <Flex
@@ -22,12 +25,13 @@ const Home = () => {
             mb="20px"
             wrap={"wrap"}
           >
-            <Stats component="progress" />
-            <Stats component="count" />
-            <Stats component="recommended" />
+            <Flex justifyContent={"space-evenly"} maxW={"100%"} gap={"10"}>
+              <Stats tile="progress" />
+              <Stats tile="count" />
+            </Flex>
+            <Stats tile="recommended" />
           </Flex>
         </Box>
-
 
         {/* Discover Section */}
         <Flex direction="column">
@@ -41,15 +45,7 @@ const Home = () => {
             <Sparkles />
             Discover
           </Heading>
-          <Flex
-            gap="5"
-            wrap="wrap"
-            maxW="100%"
-            justifyContent="space-evenly"
-          >
-            <MiniCard />
-            <MiniCard />
-            <MiniCard />
+          <Flex gap="5" wrap="wrap" maxW="100%" justifyContent="space-evenly">
             <MiniCard />
             <MiniCard />
             <MiniCard />
@@ -58,7 +54,7 @@ const Home = () => {
             <MiniCard />
           </Flex>
         </Flex>
-      </Container >
+      </Container>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { Badge, Box, Card, Heading, IconButton } from "@chakra-ui/react";
+import { Badge, Flex, Heading, IconButton } from "@chakra-ui/react";
 import { BookmarkPlus, Film } from "lucide-react";
 import { Tooltip } from "@/components/ui/tooltip";
 
@@ -6,51 +6,56 @@ const MiniCard = () => {
   return (
     <>
       <Tooltip content="One Piece" positioning={{ placement: "top" }}>
-        <Card.Root
-          h={"250px"}
-          w={"200px"}
-          bgPos={"center"}
-          bgSize={"cover"}
-          bgImg={
-            "url(https://image.tmdb.org/t/p/original/cMD9Ygz11zjJzAovURpO75Qg7rT.jpg)"
-          }
+        <Flex
+          maxW={"250px"}
+          minW={"200px"}
+          minH={"300px"}
           borderWidth={"10px"}
-          borderColor={"gray.900"}
-          placeItems={"center"}
+          borderColor={"gray.700"}
+          borderRadius={"10px"}
+          alignContent={"center"}
+          justifyContent={"space-between"}
+          direction={"column"}
+          bgColor={"gray.700"}
         >
-          <Card.Body gap="2">
-            <Card.Title
-              bgColor={"gray.900"}
-              p={"10px"}
-              borderRadius={"10px"}
-              textAlign={"center"}
-              spaceY={"2"}
-            >
-              <Heading>One Piece</Heading>
-              <Box display={"flex"}>
-                <Badge size={"xs"} colorPalette={"red"}>
-                  TV-MA
-                </Badge>
-                <Badge size={"xs"} colorPalette={"green"}>
-                  87% Score
-                </Badge>
-              </Box>
-            </Card.Title>
-          </Card.Body>
-          <Card.Footer>
-            <IconButton
-              bgColor={"yellow.400"}
-              size={"sm"}
-              borderWidth={"3px"}
-              borderColor={"gray.900"}
-            >
+          <Flex
+            maxW={"250px"}
+            maxH={"3rem"}
+            bgColor={"gray.900"}
+            justifyContent={"center"}
+            p={"5px"}
+            borderTopRadius={"10px"}
+          >
+            <Heading truncate>One Piece </Heading>
+          </Flex>
+          <Flex
+            bgPos={"bottom"}
+            bgSize={"cover"}
+            bgImg={
+              "url(https://image.tmdb.org/t/p/original/cMD9Ygz11zjJzAovURpO75Qg7rT.jpg)"
+            }
+            minH={"210px"}
+          />
+          <Flex
+            justifyContent={"space-between"}
+            bgColor={"gray.900"}
+            alignItems={"center"}
+            p={"10px"}
+            gap={"2"}
+            borderBottomRadius={"10px"}
+          >
+            <IconButton bgColor={"yellow.400"} size={"sm"}>
               <BookmarkPlus />
             </IconButton>
-            <IconButton bgColor={"gray.900"} color={"gray.100"} size={"sm"}>
+            <Flex direction={"column"} gap="1" alignItems={"center"}>
+              <Badge colorPalette={"red"}>TV-MA</Badge>
+              <Badge colorPalette={"green"}>87%</Badge>
+            </Flex>
+            <IconButton size={"sm"}>
               <Film />
             </IconButton>
-          </Card.Footer>
-        </Card.Root>
+          </Flex>
+        </Flex>
       </Tooltip>
     </>
   );
