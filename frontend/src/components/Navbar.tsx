@@ -14,14 +14,39 @@ import {
   Home,
   ListTodo,
   Telescope,
-  UserPen,
 } from "lucide-react";
 
 const Navbar = () => {
+  const menuItems = [
+    {
+      name: "Home",
+      link: "/",
+      icon: Home,
+    },
+    {
+      name: "Discover",
+      link: "/discover",
+      icon: Telescope,
+    },
+    {
+      name: "Watchlist",
+      link: "/watchlist",
+      icon: ListTodo,
+    },
+    {
+      name: "Open File...",
+      icon: DoorOpen,
+    },
+    {
+      name: "Export List",
+      icon: HardDriveUpload,
+    },
+  ];
+
   return (
     <>
       <Flex bgColor={"gray.900"} p={"20px"} gap={5} justify={"space-between"}>
-        <Link variant={"plain"}>
+        <Link variant={"plain"} href="/">
           <Image src="/crown-coin.svg" width={"2.5rem"} />
           <Heading minW={"max-content"}>Usher: Media Discovery</Heading>
         </Link>
@@ -31,47 +56,32 @@ const Navbar = () => {
         <MenuRoot>
           <MenuTrigger>
             <Avatar
+              bgColor={"transparent"}
               name="pfp"
               src="https://api.dicebear.com/9.x/micah/svg?seed=Leah"
             />
           </MenuTrigger>
           <MenuContent bgColor={"gray.900"}>
-            <MenuItem asChild value="home">
-              <a href="/">
-                <Home size={"15px"} />
-                Home
-              </a>
-            </MenuItem>
-            <MenuItem asChild value="discover">
-              <a href="/discover">
-                <Telescope size={"15px"} />
-                Discover
-              </a>
-            </MenuItem>
-            <MenuSeparator />
-            <MenuItem asChild value="profile">
-              <a href="/profile">
-                <UserPen size={"15px"} />
-                Profile
-              </a>
-            </MenuItem>
-            <MenuItem asChild value="watchlist">
-              <a href="/watchlist">
-                <ListTodo size={"15px"} />
-                Watchlist
-              </a>
-            </MenuItem>
-            <MenuSeparator />
-            <MenuItem asChild value="open-file" color={"red.500"}>
-              <a href="/login">
-                <DoorOpen size={"15px"} />
-                Open File...
-              </a>
-            </MenuItem>
-            <MenuItem value="export">
-              <HardDriveUpload size={"15px"} />
-              Export List
-            </MenuItem>
+            {menuItems.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <>
+                  {item.name === "Watchlist" ? <MenuSeparator /> : null}
+                  <MenuItem
+                    color={item.name === "Open File..." ? "red.500" : "unset"}
+                    key={index}
+                    asChild
+                    value={item.name}
+                  >
+                    <a href={item.link}>
+                      <IconComponent size={"15px"} />
+                      {item.name}
+                    </a>
+                  </MenuItem>
+                  {item.name === "Watchlist" ? <MenuSeparator /> : null}
+                </>
+              );
+            })}
           </MenuContent>
         </MenuRoot>
       </Flex>

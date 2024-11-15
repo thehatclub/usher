@@ -17,31 +17,28 @@ const Progress = () => {
   return (
     <>
       <Box
-        py={{ base: "50px", lg: "70px" }}
-        px={{ base: "50px", md: "80px" }}
-        maxW={{ base: "50%", md: "unset" }}
+        h={"50%"}
+        w={"50%"}
+        py={"20%"}
         bgColor={"gray.900"}
         borderRadius={"10px"}
-        alignContent={"center"}
         position={"relative"}
+        textAlign={"center"}
       >
-        <Float
-          offset={"50%"}
-          color={"gray.500"}
-          opacity={"10%"}
-          w={{ base: "60%", md: "15rem" }}
-        >
-          <BookOpenCheck size={"100%"} />
+        <Float offset={"50%"} color={"gray.500"} opacity={"10%"} w={"60%"}>
+          <BookOpenCheck size={"unset"} />
         </Float>
-        <Flex direction={"column"} textAlign={"center"}>
-          <Heading size={{ base: "5xl", md: "7xl" }}>50%</Heading>
-          <Text fontSize={{ base: "md", md: "xl" }} color={"gray.400"}>
-            Titles Watched
-          </Text>
-        </Flex>
-        <ProgressRoot mt={"20px"} size={"xl"}>
-          <ProgressBar />
-        </ProgressRoot>
+        <Float offset={"50%"}>
+          <Box>
+            <Heading size={"3xl"}>50%</Heading>
+            <Text fontSize={"md"} color={"gray.400"}>
+              Watched
+            </Text>
+            <ProgressRoot mt={"20px"} size={"xl"}>
+              <ProgressBar />
+            </ProgressRoot>
+          </Box>
+        </Float>
       </Box>
     </>
   );
@@ -50,28 +47,26 @@ const Count = () => {
   return (
     <>
       <Box
-        py={{ base: "60px", md: "70px" }}
-        px={{ base: "60px", md: "100px" }}
-        maxW={{ base: "50%", md: "unset" }}
+        h={"50%"}
+        w={"50%"}
+        py={"20%"}
         bgColor={"gray.100"}
         color={"gray.900"}
         borderRadius={"10px"}
-        alignContent={"center"}
         textAlign={"center"}
         position={"relative"}
       >
-        <Float
-          offset={"50%"}
-          color={"gray.500"}
-          opacity={"10%"}
-          w={{ base: "60%", md: "15rem" }}
-        >
-          <ScanEye size={"100%"} />
+        <Float offset={"50%"} color={"gray.500"} opacity={"10%"} w={"60%"}>
+          <ScanEye size={"unset"} />
         </Float>
-        <Heading size={{ base: "5xl", md: "7xl" }}>28</Heading>
-        <Text fontSize={{ base: "md", md: "xl" }} color={"gray.600"}>
-          Unwatched
-        </Text>
+        <Float offset={"50%"}>
+          <Box>
+            <Heading size={"3xl"}>28</Heading>
+            <Text fontSize={"md"} color={"gray.600"}>
+              Unwatched
+            </Text>
+          </Box>
+        </Float>
       </Box>
     </>
   );
@@ -84,11 +79,11 @@ const Recommended = () => {
         bgColor={"gray.700"}
         borderColor={"gray.700"}
         borderWidth={"10px"}
-        maxW={{ base: "100%", md: "600px" }}
+        minH={{ base: "25%", lg: "100%" }}
       >
         <Image
           borderLeftRadius={"10px"}
-          w="30%"
+          w="25%"
           src="https://image.tmdb.org/t/p/original/6qfZAOEUFIrbUH3JvePclx1nXzz.jpg"
           alt="Dan Da Dan"
         />
@@ -99,7 +94,7 @@ const Recommended = () => {
           spaceY="5"
           alignItems={"end"}
           justifyContent={"center"}
-          w={"vw"}
+          w={"75%"}
           px={"20px"}
         >
           <VStack>
@@ -110,11 +105,11 @@ const Recommended = () => {
             </HStack>
           </VStack>
           <HStack>
-            <Button bgColor="yellow.400" size={{ base: "xs", md: "md" }}>
+            <Button bgColor="yellow.400" size={{ base: "sm", md: "md" }}>
               <BookmarkPlus />
               Add to List
             </Button>
-            <Button size={{ base: "xs", md: "md" }}>
+            <Button size={{ base: "sm", md: "lg" }}>
               <Film />
               Watch Trailer
             </Button>

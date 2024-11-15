@@ -5,6 +5,7 @@ import { Tooltip } from "@/components/ui/tooltip";
 const MiniCard = () => {
   return (
     <>
+      {/* Add hover coard functionallity as a portal to specific media page */}
       <Tooltip content="One Piece" positioning={{ placement: "top" }}>
         <Flex
           maxW={"250px"}

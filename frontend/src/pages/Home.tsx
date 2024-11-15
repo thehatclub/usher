@@ -1,50 +1,32 @@
 import MiniCard from "@/components/MiniCard";
 import Stats from "@/components/Stats";
-import {
-  Box,
-  Container,
-  Flex,
-  Heading,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, Container, Flex, Link } from "@chakra-ui/react";
 import { Sparkles } from "lucide-react";
 
 const Home = () => {
-  // Determine layout direction based on screen size
-  const flexDirection = useBreakpointValue({ base: "column", md: "row" });
-
   return (
     <>
       <Container py="50px">
         {/* Stats Section */}
-        <Box>
-          <Flex
-            justifyContent="center"
-            gap="10"
-            direction={flexDirection} // Adjust direction for responsiveness
-            mb="20px"
-            wrap={"wrap"}
-          >
-            <Flex justifyContent={"space-evenly"} maxW={"100%"} gap={"10"}>
-              <Stats tile="progress" />
-              <Stats tile="count" />
-            </Flex>
-            <Stats tile="recommended" />
+        <Flex direction={{ base: "column", lg: "row" }} w={"100%"} gap={"5"}>
+          <Flex minW={"50%"} gap={"5"}>
+            <Stats tile="progress" />
+            <Stats tile="count" />
           </Flex>
-        </Box>
+          <Box
+            alignSelf={"center"}
+            maxW={{ base: "unset", md: "75%", lg: "50%" }}
+          >
+            <Stats tile="recommended" />
+          </Box>
+        </Flex>
 
         {/* Discover Section */}
-        <Flex direction="column">
-          <Heading
-            my="20px"
-            display="flex"
-            alignItems="center"
-            gap="10px"
-            color="yellow.400"
-          >
+        <Flex direction="column" maxH={"75%"}>
+          <Link my="20px" color="yellow.400" fontSize={"2xl"}>
             <Sparkles />
             Discover
-          </Heading>
+          </Link>
           <Flex gap="5" wrap="wrap" maxW="100%" justifyContent="space-evenly">
             <MiniCard />
             <MiniCard />
