@@ -3,7 +3,12 @@ import { Flex, Link } from "@chakra-ui/react";
 const Footer = () => {
   return (
     <>
-      <Flex justifyContent={"center"} p={"15px"} bg={"gray.900"}>
+      <Flex
+        borderTopWidth={"1px"}
+        justifyContent={"center"}
+        p={"15px"}
+        bg={"gray.900"}
+      >
         <Link
           variant={"underline"}
           color={"yellow.400"}

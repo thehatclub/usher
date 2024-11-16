@@ -11,7 +11,13 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { ProgressBar, ProgressRoot } from "@/components/ui/progress";
-import { BookmarkPlus, Film, ScanEye, BookOpenCheck } from "lucide-react";
+import {
+  BookmarkPlus,
+  Film,
+  ScanEye,
+  BookOpenCheck,
+  Sparkle,
+} from "lucide-react";
 
 const Progress = () => {
   return (
@@ -98,6 +104,10 @@ const Recommended = () => {
           px={"20px"}
         >
           <VStack>
+            <Badge colorPalette={"yellow"} size={{ base: "md", md: "lg" }}>
+              <Sparkle size={"1rem"} />
+              Recommended
+            </Badge>
             <Heading>Dan Da Dan</Heading>
             <HStack>
               <Badge colorPalette={"red"}>TV-MA</Badge>
